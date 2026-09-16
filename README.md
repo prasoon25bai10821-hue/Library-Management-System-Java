@@ -227,7 +227,7 @@ javac -version
 ### Clone the Repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone <https://github.com/prasoon25bai10821-hue/Library-Management-System-Java>
 cd Library-Management-System-Java
 ```
 
@@ -473,28 +473,7 @@ The VITyarthi project requirements also call for design artefacts such as:
 
 These artefacts should be included in the project report and/or repository documentation as required by the course instructions.
 
-## 20. Academic Requirements Checklist
-
-| Requirement | Status |
-|---|---|
-| Original project relevant to course | ✅ Library Management System |
-| At least 3 functional modules | ✅ |
-| Clear input/output structure | ✅ |
-| Logical user workflow | ✅ |
-| At least 4 non-functional requirements specified | ✅ |
-| Proper architectural/modular design | ✅ Multiple Java classes |
-| Subject concepts demonstrated | ✅ OOP, Collections, Serialization, Exceptions, Date API |
-| 5–10 meaningful classes/files | ✅ 8 Java source files |
-| Proper folder structure | ✅ `src/` |
-| Validation/error handling | ✅ |
-| Git/GitHub | ⚠️ Must be maintained/submitted by student |
-| README.md | ✅ This file |
-| statement.md | ⚠️ Must be created separately |
-| Testing | ⚠️ Manual testing can be documented; automated unit tests are not currently included |
-| Design diagrams | ⚠️ Must be created separately |
-| Detailed project report PDF | ⚠️ Must be submitted separately |
-
-## 21. References
+## 20. References
 
 - Java Documentation / Java Standard Library
 - VITyarthi - Build Your Own Project instructions
