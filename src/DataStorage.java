@@ -1,26 +1,56 @@
-import java.io.*;
+
+import   java.io.FileInputStream;
+
+import  java.io.FileNotFoundException;
+
+import java.io.FileOutputStream;
+
+import  java.io.IOException;
+import   java.io.ObjectInputStream;
+
+import java.io.ObjectOutputStream;
 
 public class DataStorage {
+
     private static final String FILE_NAME = "library_data.ser";
 
+    
+    
     public static void saveLibrary(Library library) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
-            oos.writeObject(library);
-            System.out.println("System data saved successfully to disk.");
+
+        try (ObjectOutputStream output =
+                     new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+
+            output.writeObject(library);
+            System.out.println("Library data saved successfully.");
+
         } catch (IOException e) {
-            System.out.println("Error saving data: " + e.getMessage());
+            
+            System.out.println("Unable to save library data: " + e.getMessage());
         }
     }
 
+    //   Load's the library.  data from saved file
+    
     public static Library loadLibrary() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
-            return (Library) ois.readObject();
+
+        try (ObjectInputStream input =
+                     new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+
+            return (Library) input.readObject();
+
         } catch (FileNotFoundException e) {
-            System.out.println("No previous data found. Starting a fresh database.");
+            
+            System.out.println("No saved library data found. Creating a new library.");
+            
             return new Library();
+
         } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error loading data. Starting fresh.");
+            System.out.println("Could not load the saved data. Starting with a new library.");
+            
             return new Library();
         }
     }
 }
+
+
