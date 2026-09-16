@@ -9,7 +9,7 @@ public class FineUtils {
     private static final int FINE_PER_DAY = 50;
 
     
-    // Calculate's   the date by which a book should be returned
+    // The date is been caculating by which the book been returned.
     
    
     public  static LocalDate  calculateDueDate(LocalDate issueDate) {
