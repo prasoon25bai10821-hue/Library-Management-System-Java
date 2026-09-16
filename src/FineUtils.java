@@ -17,7 +17,7 @@ public class FineUtils {
         return  issueDate.plusDays( 15);
     }
 
-    // Calculates the fine if the book is returned after the due date
+    // the fine being calculated if book is returned after the due date
     public static long  calculateFine(LocalDate dueDate, LocalDate returnDate) {
 
         if (!returnDate.isAfter (dueDate)) {
