@@ -1,18 +1,31 @@
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import java.time. LocalDate;
+
+import  java.time.temporal. ChronoUnit;
+
+
 
 public class FineUtils {
-    private static final int FINE_PER_DAY = 50; // 50 Rs per day
 
-    public static LocalDate calculateDueDate(LocalDate issueDate) {
-        return issueDate.plusDays(15);
+    private static final int FINE_PER_DAY = 50;
+
+    
+    // Calculate's   the date by which a book should be returned
+    
+   
+    public  static LocalDate  calculateDueDate(LocalDate issueDate) {
+        
+        return  issueDate.plusDays( 15);
     }
 
-    public static long calculateFine(LocalDate dueDate, LocalDate returnDate) {
-        if (returnDate.isAfter(dueDate)) {
-            long daysLate = ChronoUnit.DAYS.between(dueDate, returnDate);
-            return daysLate * FINE_PER_DAY;
+    // Calculates the fine if the book is returned after the due date
+    public static long  calculateFine(LocalDate dueDate, LocalDate returnDate) {
+
+        if (!returnDate.isAfter (dueDate)) {
+            return 0;
         }
-        return 0;
+
+        long  daysLate = ChronoUnit.DAYS.between(dueDate, returnDate);
+        
+        return daysLate * FINE_PER_DAY;
     }
 }
